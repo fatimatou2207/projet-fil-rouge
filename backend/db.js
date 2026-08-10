@@ -13,6 +13,19 @@ db.exec(`
         date_naissance TEXT
     )
 `);
+try {
+    db.exec(`
+        ALTER TABLE stagiaires
+        ADD COLUMN date_ajout TEXT
+    `);
+
+    console.log("Colonne date_ajout ajoutée.");
+} catch (error) {
+    // La colonne existe déjà, donc on ne fait rien
+    if (!error.message.includes("duplicate column name")) {
+        console.log(error.message);
+    }
+}
 
 console.log('Base de données prête.');
 

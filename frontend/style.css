@@ -1,15 +1,64 @@
+```css
+/* =========================
+   RESET
+========================= */
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+
+/* =========================
+   VARIABLES MODE CLAIR
+========================= */
+
+:root {
+    --bg-color: #f4f6f9;
+    --text-color: #1e293b;
+    --card-bg: #ffffff;
+    --primary-color: #2563eb;
+    --border-color: #e2e8f0;
+    --input-bg: #ffffff;
+}
+
+
+/* =========================
+   VARIABLES MODE SOMBRE
+========================= */
+
+body.dark {
+    --bg-color: #0f172a;
+    --text-color: #f8fafc;
+    --card-bg: #1e293b;
+    --primary-color: #3b82f6;
+    --border-color: #334155;
+    --input-bg: #0f172a;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
-    color: #333;
+
+    background-color: var(--bg-color);
+    color: var(--text-color);
+
     padding: 30px;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
 }
+
+
+/* =========================
+   TITRES
+========================= */
 
 h1 {
     text-align: center;
@@ -22,105 +71,222 @@ h2 {
 
 
 /* =========================
+   BOUTON MODE CLAIR / SOMBRE
+========================= */
+
+#themeBtn {
+    display: block;
+
+    margin: 0 auto 25px auto;
+
+    padding: 10px 18px;
+
+    border: none;
+    border-radius: 6px;
+
+    background-color: var(--primary-color);
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+#themeBtn:hover {
+    opacity: 0.85;
+}
+
+
+/* =========================
    FORMULAIRE
-   ========================= */
+========================= */
 
 .formulaire {
     max-width: 800px;
+
     margin: 0 auto 30px auto;
-    background-color: white;
+
+    background-color: var(--card-bg);
+
     padding: 25px;
+
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.1);
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
 }
+
 
 .formulaire input {
     width: 100%;
+
     padding: 12px;
+
     margin-bottom: 12px;
-    border: 1px solid #ccc;
+
+    border: 1px solid var(--border-color);
+
     border-radius: 6px;
+
     font-size: 16px;
+
+    background-color: var(--input-bg);
+
+    color: var(--text-color);
 }
+
+
+/* =========================
+   BOUTON AJOUTER
+========================= */
 
 #ajouter {
     width: 100%;
+
     padding: 12px;
+
     border: none;
+
     border-radius: 6px;
-    background-color: #007bff;
+
+    background-color: var(--primary-color);
+
     color: white;
+
     font-size: 16px;
+
     cursor: pointer;
 }
 
 #ajouter:hover {
-    background-color: #0056b3;
+    opacity: 0.85;
 }
 
 
 /* =========================
    TABLEAU
-   ========================= */
+========================= */
 
 .table-container {
-    max-width: 1000px;
+    max-width: 1100px;
+
     margin: auto;
-    background-color: white;
+
+    background-color: var(--card-bg);
+
     padding: 20px;
+
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.1);
+
     overflow-x: auto;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
 }
+
 
 table {
     width: 100%;
+
     border-collapse: collapse;
 }
+
 
 th,
 td {
     padding: 12px;
-    border: 1px solid #ddd;
+
+    border: 1px solid var(--border-color);
+
     text-align: center;
 }
 
+
 th {
     background-color: #343a40;
+
     color: white;
 }
 
+
 tr:nth-child(even) {
-    background-color: #f8f9fa;
+    background-color: var(--bg-color);
 }
 
 
 /* =========================
-   BOUTONS
-   ========================= */
+   RECHERCHE
+========================= */
+
+.recherche {
+    margin-bottom: 20px;
+}
+
+
+#recherche,
+#filtreFormation {
+    width: 100%;
+
+    padding: 12px;
+
+    margin-bottom: 10px;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 6px;
+
+    font-size: 16px;
+
+    background-color: var(--input-bg);
+
+    color: var(--text-color);
+}
+
+
+/* =========================
+   BOUTONS DU TABLEAU
+========================= */
 
 td button {
     padding: 7px 10px;
+
     margin: 3px;
+
     border: none;
+
     border-radius: 5px;
+
     cursor: pointer;
 }
 
+
 td button:first-child {
     background-color: #ffc107;
+
     color: #222;
 }
 
+
 td button:last-child {
     background-color: #dc3545;
+
     color: white;
 }
 
 
 /* =========================
    RESPONSIVE
-   ========================= */
+========================= */
 
 @media (max-width: 600px) {
 
@@ -135,6 +301,7 @@ td button:last-child {
     th,
     td {
         padding: 8px;
+
         font-size: 14px;
     }
 
@@ -142,4 +309,45 @@ td button:last-child {
         padding: 15px;
     }
 
+}
+``
+/* =========================
+   PETITES STATISTIQUES
+========================= */
+
+.dashboard {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+
+    width: fit-content;
+
+    margin: 10px auto 20px auto;
+}
+
+.statistique {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+
+    padding: 5px 8px;
+
+    border-radius: 5px;
+
+    text-align: center;
+
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.statistique h3 {
+    font-size: 11px;
+    margin-bottom: 2px;
+}
+
+.statistique p {
+    font-size: 15px;
+    font-weight: bold;
+
+    margin: 0;
+
+    color: var(--primary-color);
 }

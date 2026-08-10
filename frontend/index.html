@@ -1,71 +1,164 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+ 
     <title>Gestion des stagiaires</title>
-
+    
     <link rel="stylesheet" href="style.css">
-
 </head>
-
 
 <body>
 
+    <h1>Gestion des stagiaires</h1>
+    <button id="themeBtn">🌙 Mode sombre</button>
+    <!-- =========================
+     TABLEAU DE BORD
+========================== -->
 
-<h1>Gestion des stagiaires</h1>
+<div class="dashboard">
 
+    <div class="statistique">
+        <h3>Total</h3>
+        <p id="totalStagiaires">0</p>
+    </div>
 
-<div class="formulaire">
+    <div class="statistique">
+        <h3>Moyenne</h3>
+        <p id="moyenneNotes">0</p>
+    </div>
 
-    <h2>Ajouter / Modifier un stagiaire</h2>
+    <div class="statistique">
+        <h3>Note maximale</h3>
+        <p id="noteMax">0</p>
+    </div>
 
-    <input id="nom" placeholder="Nom">
-
-    <input id="note" type="number" placeholder="Note">
-
-    <input id="formation" placeholder="Formation">
-
-    <input id="date_naissance" type="date">
-
-    <button id="ajouter">
-        Ajouter
-    </button>
-
-</div>
-
-
-<div class="table-container">
-
-    <h2>Liste des stagiaires</h2>
-
-    <table>
-
-        <thead>
-
-            <tr>
-                <th>ID</th>
-                <th>Nom</th>
-                <th>Note</th>
-                <th>Formation</th>
-                <th>Date de naissance</th>
-                <th>Actions</th>
-            </tr>
-
-        </thead>
-
-        <tbody id="liste"></tbody>
-
-    </table>
+    <div class="statistique">
+        <h3>Note minimale</h3>
+        <p id="noteMin">0</p>
+    </div>
 
 </div>
+    
 
 
-<script src="script.js"></script>
+    <!-- =========================
+         FORMULAIRE
+    ========================== -->
+
+    <div class="formulaire">
+
+        <h2>Ajouter / Modifier un stagiaire</h2>
+
+        <input
+            type="text"
+            id="nom"
+            placeholder="Nom"
+        >
+
+        <input
+            type="number"
+            id="note"
+            placeholder="Note"
+            min="0"
+            max="20"
+        >
+
+        <input
+            type="text"
+            id="formation"
+            placeholder="Formation"
+        >
+
+        <input
+            type="date"
+            id="date_naissance"
+        >
+
+        <button id="ajouter">
+            Ajouter
+        </button>
+
+    </div>
+
+
+    <!-- =========================
+         LISTE
+    ========================== -->
+
+    <div class="table-container">
+
+        <h2>Liste des stagiaires</h2>
+
+
+        <!-- RECHERCHE -->
+
+        <div class="recherche">
+
+            <input
+                type="text"
+                id="recherche"
+                placeholder="Rechercher par nom..."
+            >
+
+            <select id="filtreFormation">
+
+                <option value="">
+                    Toutes les formations
+                </option>
+
+                <option value="Backend">
+                    Backend
+                </option>
+
+                <option value="Frontend">
+                    Frontend
+                </option>
+
+                <option value="Full Stack">
+                    Full Stack
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- TABLEAU -->
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+
+                    <th>Nom</th>
+
+                    <th>Note</th>
+
+                    <th>Formation</th>
+
+                    <th>Date de naissance</th>
+
+                    <th>Actions</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="liste"></tbody>
+
+        </table>
+
+    </div>
+
+
+    <script src="script.js"></script>
 
 </body>
 
