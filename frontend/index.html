@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gestion des stagiaires</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<h1>Gestion des stagiaires</h1>
+
+
+<div class="formulaire">
+
+    <h2>Ajouter / Modifier un stagiaire</h2>
+
+    <input id="nom" placeholder="Nom">
+
+    <input id="note" type="number" placeholder="Note">
+
+    <input id="formation" placeholder="Formation">
+
+    <input id="date_naissance" type="date">
+
+    <button id="ajouter">
+        Ajouter
+    </button>
+
+</div>
+
+
+<div class="table-container">
+
+    <h2>Liste des stagiaires</h2>
+
+    <table>
+
+        <thead>
+
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Note</th>
+                <th>Formation</th>
+                <th>Date de naissance</th>
+                <th>Actions</th>
+            </tr>
+
+        </thead>
+
+        <tbody id="liste"></tbody>
+
+    </table>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
